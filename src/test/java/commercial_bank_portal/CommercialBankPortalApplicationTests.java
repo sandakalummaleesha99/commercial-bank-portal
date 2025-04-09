@@ -1,10 +1,10 @@
-package com.comercial_bank_portal;
+package commercial_bank_portal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class CommercialBankPortalApplicationTests {
 
 	@Test
 	void contextLoads() {

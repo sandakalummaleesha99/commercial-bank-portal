@@ -1,13 +1,13 @@
-package com.comercial_bank_portal;
+package commercial_bank_portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class CommercialBankPortalApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(CommercialBankPortalApplication.class, args);
 	}
 
 }
