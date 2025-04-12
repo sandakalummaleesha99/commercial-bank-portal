@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.commercialbankportal.com/bankTransfer"
+           xmlns:tns="http://www.commercialbankportal.com/bankTransfer"
+           elementFormDefault="qualified">
+
+    <!-- Root Document Element -->
+    <xs:element name="DocumentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header" type="tns:Header"/>
+                <xs:element name="EmployeeInfo" type="tns:EmployeeInfo" maxOccurs="unbounded"/>
+                <xs:element name="Footer" type="tns:Footer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Header Definition -->
+    <xs:complexType name="Header">
+        <xs:sequence>
+            <xs:element name="CompanyRegName" type="xs:string"/>
+            <xs:element name="CompanyRegNo" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Employee Info Definition -->
+    <xs:complexType name="EmployeeInfo">
+        <xs:sequence>
+            <xs:element name="EpfNo" type="xs:string"/>
+            <xs:element name="FirstName" type="xs:string"/>
+            <xs:element name="MiddleName" type="xs:string"/>
+            <xs:element name="LastName" type="xs:string"/>
+            <xs:element name="NIC" type="xs:string"/>
+            <xs:element name="BankInfo" type="tns:BankInfo"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Bank Info Definition -->
+    <xs:complexType name="BankInfo">
+        <xs:sequence>
+            <xs:element name="BankName" type="xs:string"/>
+            <xs:element name="BankAccount" type="xs:string"/>
+            <xs:element name="BranchCode" type="xs:string"/>
+            <xs:element name="BankCode" type="xs:string"/>
+            <xs:element name="Salary" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Footer Definition -->
+    <xs:complexType name="Footer">
+        <xs:sequence>
+            <xs:element name="CtrlSum" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

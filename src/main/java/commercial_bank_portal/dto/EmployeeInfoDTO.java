@@ -3,16 +3,21 @@ package commercial_bank_portal.dto;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import lombok.AllArgsConstructor;
+import jakarta.xml.bind.annotation.XmlType;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+        "epfNo",
+        "firstName",
+        "middleName",
+        "lastName",
+        "NIC",
+        "bankInfo"
+})
 public class EmployeeInfoDTO {
 
     @XmlElement(name = "EpfNo")
@@ -31,5 +36,5 @@ public class EmployeeInfoDTO {
     private String NIC;
 
     @XmlElement(name = "BankInfo")
-    private BankInfoDTO bankInfoDTO;
+    private BankInfoDTO bankInfo;
 }
