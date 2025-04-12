@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "DocumentRequest", namespace = "http://www.commercialbankportal.com/bankTransfer")
+@XmlRootElement(name = "DocumentRequest")
 @XmlType(name = "", propOrder = {
         "header",
         "employeeInfoS",
@@ -17,12 +17,12 @@ import java.util.List;
 })
 public class DocumentRequest {
 
-    @XmlElement(name = "Header")
+    @XmlElement(required = true)
     private HeaderDTO header;
 
-    @XmlElement(name = "EmployeeInfo")
+    @XmlElement(name = "EmployeeInfoS", required = true)
     private List<EmployeeInfoDTO> employeeInfoS;
 
-    @XmlElement(name = "Footer")
+    @XmlElement(required = true)
     private FooterDTO footer;
 }

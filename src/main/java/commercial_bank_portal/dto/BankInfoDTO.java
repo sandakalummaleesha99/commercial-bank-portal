@@ -19,18 +19,9 @@ import lombok.Setter;
 })
 public class BankInfoDTO {
 
-    @XmlElement(name = "BankName")
     private String bankName;
-
-    @XmlElement(name = "BankAccount")
     private String bankAccount;
-
-    @XmlElement(name = "BankCode")
     private String bankCode;
-
-    @XmlElement(name = "BranchCode")
     private String branchCode;
-
-    @XmlElement(name = "Salary")
     private double salary;
 }

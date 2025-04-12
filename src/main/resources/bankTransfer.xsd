@@ -8,9 +8,9 @@
     <xs:element name="DocumentRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Header" type="tns:Header"/>
-                <xs:element name="EmployeeInfo" type="tns:EmployeeInfo" maxOccurs="unbounded"/>
-                <xs:element name="Footer" type="tns:Footer"/>
+                <xs:element name="header" type="tns:Header"/>
+                <xs:element name="EmployeeInfoS" type="tns:EmployeeInfo" maxOccurs="unbounded"/>
+                <xs:element name="footer" type="tns:Footer"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -18,38 +18,38 @@
     <!-- Header Definition -->
     <xs:complexType name="Header">
         <xs:sequence>
-            <xs:element name="CompanyRegName" type="xs:string"/>
-            <xs:element name="CompanyRegNo" type="xs:string"/>
+            <xs:element name="companyRegName" type="xs:string"/>
+            <xs:element name="companyRegNo" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
     <!-- Employee Info Definition -->
     <xs:complexType name="EmployeeInfo">
         <xs:sequence>
-            <xs:element name="EpfNo" type="xs:string"/>
-            <xs:element name="FirstName" type="xs:string"/>
-            <xs:element name="MiddleName" type="xs:string"/>
-            <xs:element name="LastName" type="xs:string"/>
+            <xs:element name="epfNo" type="xs:string"/>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="middleName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
             <xs:element name="NIC" type="xs:string"/>
-            <xs:element name="BankInfo" type="tns:BankInfo"/>
+            <xs:element name="bankInfo" type="tns:BankInfo"/>
         </xs:sequence>
     </xs:complexType>
 
     <!-- Bank Info Definition -->
     <xs:complexType name="BankInfo">
         <xs:sequence>
-            <xs:element name="BankName" type="xs:string"/>
-            <xs:element name="BankAccount" type="xs:string"/>
-            <xs:element name="BranchCode" type="xs:string"/>
-            <xs:element name="BankCode" type="xs:string"/>
-            <xs:element name="Salary" type="xs:double"/>
+            <xs:element name="bankName" type="xs:string"/>
+            <xs:element name="bankAccount" type="xs:string"/>
+            <xs:element name="bankCode" type="xs:string"/>
+            <xs:element name="branchCode" type="xs:string"/>
+            <xs:element name="salary" type="xs:double"/>
         </xs:sequence>
     </xs:complexType>
 
     <!-- Footer Definition -->
     <xs:complexType name="Footer">
         <xs:sequence>
-            <xs:element name="CtrlSum" type="xs:decimal"/>
+            <xs:element name="ctrlSum" type="xs:decimal"/>
         </xs:sequence>
     </xs:complexType>
 
