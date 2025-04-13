@@ -1,55 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://www.commercialbankportal.com/bankTransfer"
-           xmlns:tns="http://www.commercialbankportal.com/bankTransfer"
+           xmlns="http://www.commercialbankportal.com/bankTransfer"
            elementFormDefault="qualified">
 
-    <!-- Root Document Element -->
-    <xs:element name="DocumentRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="header" type="tns:Header"/>
-                <xs:element name="EmployeeInfoS" type="tns:EmployeeInfo" maxOccurs="unbounded"/>
-                <xs:element name="footer" type="tns:Footer"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- Header Definition -->
-    <xs:complexType name="Header">
-        <xs:sequence>
-            <xs:element name="companyRegName" type="xs:string"/>
-            <xs:element name="companyRegNo" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <!-- Employee Info Definition -->
-    <xs:complexType name="EmployeeInfo">
-        <xs:sequence>
-            <xs:element name="epfNo" type="xs:string"/>
-            <xs:element name="firstName" type="xs:string"/>
-            <xs:element name="middleName" type="xs:string"/>
-            <xs:element name="lastName" type="xs:string"/>
-            <xs:element name="NIC" type="xs:string"/>
-            <xs:element name="bankInfo" type="tns:BankInfo"/>
-        </xs:sequence>
-    </xs:complexType>
-
     <!-- Bank Info Definition -->
-    <xs:complexType name="BankInfo">
+    <xs:element name="BankRequest" type="BankRequest"/>
+
+    <xs:complexType name="BankRequest">
         <xs:sequence>
             <xs:element name="bankName" type="xs:string"/>
             <xs:element name="bankAccount" type="xs:string"/>
             <xs:element name="bankCode" type="xs:string"/>
             <xs:element name="branchCode" type="xs:string"/>
             <xs:element name="salary" type="xs:double"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <!-- Footer Definition -->
-    <xs:complexType name="Footer">
-        <xs:sequence>
-            <xs:element name="ctrlSum" type="xs:decimal"/>
         </xs:sequence>
     </xs:complexType>
 

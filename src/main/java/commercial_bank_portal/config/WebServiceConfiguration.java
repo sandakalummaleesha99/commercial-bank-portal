@@ -6,36 +6,36 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ws.config.annotation.EnableWs;
+import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
-@EnableWs
 @Configuration
-public class WebServiceConfig {
+@EnableWs
+public class WebServiceConfiguration extends WsConfigurerAdapter {
 
     @Bean
-    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext context) {
+    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServletServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
-        servlet.setApplicationContext(context);
+        servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<MessageDispatcherServlet>(servlet, "/ws/*");
-    }
-
-    @Bean(name = "bankTransfer")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema) {
-        DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
-        defaultWsdl11Definition.setPortTypeName("bankTransfer");
-        defaultWsdl11Definition.setLocationUri("/ws");
-        defaultWsdl11Definition.setTargetNamespace("http://www.commercialbankportal.com/bankTransfer");
-        defaultWsdl11Definition.setSchema(schema);
-        return defaultWsdl11Definition;
-
+        return new ServletRegistrationBean<>(servlet, "/ws/*");
     }
 
     @Bean
     public XsdSchema schema() {
         return new SimpleXsdSchema(new ClassPathResource("bankTransfer.xsd"));
+    }
+
+    @Bean(name = "bankTransfer")
+    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("BankTransferPort");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://www.commercialbankportal.com/bankTransfer");
+        wsdl11Definition.setSchema(schema);
+        return wsdl11Definition;
     }
 }
