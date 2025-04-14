@@ -84,7 +84,8 @@
                             <sources>
                                 <source>src/main/resources/bankTransfer.xsd</source>
                             </sources>
-                            <outputDirectory>src/main/java/commercial_bank_portal/generated/jaxb</outputDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/jaxb</outputDirectory>
+                            <packageName>commercial_bank_portal.generated.jaxb</packageName>
                             <clearOutputDir>true</clearOutputDir>
                         </configuration>
                     </execution>

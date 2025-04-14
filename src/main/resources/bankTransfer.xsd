@@ -4,17 +4,50 @@
            xmlns="http://www.commercialbankportal.com/bankTransfer"
            elementFormDefault="qualified">
 
-    <!-- Bank Info Definition -->
-    <xs:element name="BankRequest" type="BankRequest"/>
+    <xs:element name="DocumentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="CompanyRegName" type="xs:string"/>
+                            <xs:element name="CompanyRegNo" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
 
-    <xs:complexType name="BankRequest">
-        <xs:sequence>
-            <xs:element name="bankName" type="xs:string"/>
-            <xs:element name="bankAccount" type="xs:string"/>
-            <xs:element name="bankCode" type="xs:string"/>
-            <xs:element name="branchCode" type="xs:string"/>
-            <xs:element name="salary" type="xs:double"/>
-        </xs:sequence>
-    </xs:complexType>
+                <xs:element name="EmployeeInfo" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="EpfNo" type="xs:string"/>
+                            <xs:element name="FirstName" type="xs:string"/>
+                            <xs:element name="MiddleName" type="xs:string"/>
+                            <xs:element name="LastName" type="xs:string"/>
+                            <xs:element name="NIC" type="xs:string"/>
+                            <xs:element name="BankInfo">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="BankName" type="xs:string"/>
+                                        <xs:element name="BankAccount" type="xs:string"/>
+                                        <xs:element name="BankCode" type="xs:string"/>
+                                        <xs:element name="BranchCode" type="xs:string"/>
+                                        <xs:element name="Salary" type="xs:double"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Footer">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="CtrlSum" type="xs:double"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>
