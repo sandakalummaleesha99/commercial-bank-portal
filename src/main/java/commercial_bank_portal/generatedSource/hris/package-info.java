@@ -6,4 +6,4 @@
 //
 
 @jakarta.xml.bind.annotation.XmlSchema(namespace = "http://www.commercialbankportal.com/bankTransfer", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package commercial_bank_portal.generatedSource;
+package commercial_bank_portal.generatedSource.hris;

@@ -1,6 +1,6 @@
 package commercial_bank_portal.endPoint;
 
-import commercial_bank_portal.generatedSource.DocumentRequest;
+import commercial_bank_portal.generatedSource.hris.DocumentRequest;
 import commercial_bank_portal.service.PaymentTransferService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
