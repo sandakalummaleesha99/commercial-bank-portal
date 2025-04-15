@@ -1,4 +1,4 @@
-package commercial_bank_portal.generatedSource.hris;
+package commercial_bank_portal.wsdl.hris;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
