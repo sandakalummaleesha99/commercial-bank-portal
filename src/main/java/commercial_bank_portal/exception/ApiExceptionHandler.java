@@ -1,6 +1,5 @@
 package commercial_bank_portal.exception;
 
-import commercial_bank_portal.util.CommonResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,20 +14,20 @@ import java.util.List;
 @RestControllerAdvice
 @Slf4j
 public class ApiExceptionHandler {
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    ResponseEntity<CommonResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-        CommonResponse commonResponse = new CommonResponse();
-        List<String> errorList = new ArrayList<>();
-        ex.getBindingResult().getFieldErrors().forEach(
-                fieldError -> errorList.add(fieldError.getDefaultMessage())
-        );
-        log.error("MethodArgumentNotValidException : {}", ex.getMessage());
-        commonResponse.setStatus(HttpStatus.BAD_REQUEST);
-        commonResponse.setMessage(errorList.get(0));
-        return ResponseEntity.status(HttpStatus.OK.value()).body(commonResponse);
-    }
+//
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    ResponseEntity<CommonResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+//        CommonResponse commonResponse = new CommonResponse();
+//        List<String> errorList = new ArrayList<>();
+//        ex.getBindingResult().getFieldErrors().forEach(
+//                fieldError -> errorList.add(fieldError.getDefaultMessage())
+//        );
+//        log.error("MethodArgumentNotValidException : {}", ex.getMessage());
+//        commonResponse.setStatusCode(HttpStatus.BAD_REQUEST.value());
+//        commonResponse.setMessage(errorList.get(0));
+//        return ResponseEntity.status(HttpStatus.OK.value()).body(commonResponse);
+//    }
 
    /* @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)

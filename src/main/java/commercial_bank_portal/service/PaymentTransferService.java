@@ -1,8 +1,9 @@
 package commercial_bank_portal.service;
 
-import commercial_bank_portal.util.CommonResponse;
+import commercial_bank_portal.wsdl.hris.DocumentRequest;
+import commercial_bank_portal.wsdl.hris.DocumentResponse;
 
 public interface PaymentTransferService {
 
-    CommonResponse transferPayments() throws Exception;
+    DocumentResponse transferPayments(DocumentRequest request);
 }

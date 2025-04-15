@@ -7,6 +7,8 @@ import jakarta.xml.bind.annotation.XmlType;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
         "ctrlSum"
@@ -15,5 +17,5 @@ import lombok.Setter;
 @Setter
 public class Footer {
     @XmlElement(name = "CtrlSum")
-    protected double ctrlSum;
+    protected BigDecimal ctrlSum;
 }
